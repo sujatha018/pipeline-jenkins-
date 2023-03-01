@@ -5,7 +5,7 @@ pipeline {
   string defaultValue: 'main', name: 'branch', trim: true
 }
 environment {
-  BRANCH_HOME = ${branch}
+  BRANCH_HOME = "${branch}"
 }
 
     stages {
