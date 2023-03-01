@@ -15,7 +15,7 @@ pipeline {
         }
         
         stage('DEPLOY') {
-            agent { label 'slave2' } 
+            agent { label 'slave1' } 
             steps {
                 echo "This is a DEPLOY stage"
                 sh 'sleep 5'
