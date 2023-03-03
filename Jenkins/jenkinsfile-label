@@ -25,6 +25,7 @@ pipeline {
                 sh '''
                 echo "this is test stage"
                 sleep 5 
+                
                 '''
             }
         }
