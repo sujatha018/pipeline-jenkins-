@@ -8,7 +8,7 @@ pipeline {
                 pwd 
                 ls 
                 echo "this is Build stage"
-                sleep 5
+                sleep 10
                 '''
             }
         }
