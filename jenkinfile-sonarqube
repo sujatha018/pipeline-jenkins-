@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+    
+     environment{
+        PATH = "/opt/maven/bin:$PATH"
+    }
+        stages{
+        stage("Git Checkout"){
+            steps{
+               git branch: 'main', url: 'https://github.com/adeshbagale/webapp-edureka.git'
+            }
+        }  
+         stage("Maven Build"){
+            steps{
+                sh "mvn clean package"
+            }
+        }
+        stage('Sonar scan'){
+            steps{
+                withSonarQubeEnv('SonarQube') {
+                mvn sonar:sonar 
+            }
+        } 
+   }
+}
+}
