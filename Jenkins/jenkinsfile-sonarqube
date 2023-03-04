@@ -5,6 +5,7 @@ pipeline {
                 steps {
                     sh 'sh echo "first stage"'
                     sleep 5
+                    
                 }
             }
             stage ('build') {
