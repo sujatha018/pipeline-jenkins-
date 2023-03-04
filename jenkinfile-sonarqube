@@ -5,6 +5,13 @@ pipeline {
             steps{
                 git credentialsId: 'github', url: 'https://github.com/sujatha018/pipeline-jenkins-'
             }
-        }   
+        }  
+        stage (''build') {
+        steps {
+        sh '''
+        echo "this is build stage"
+        '''
+        }
+      }   
       }  
 }
