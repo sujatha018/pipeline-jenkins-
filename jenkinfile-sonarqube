@@ -1,17 +1,20 @@
 pipeline {
     agent any
+    
+     environment{
+        PATH = "/opt/maven/bin:$PATH"
+    }
         stages{
         stage("Git Checkout"){
             steps{
-                git credentialsId: 'github', url: 'https://github.com/sujatha018/pipeline-jenkins-'
+               git branch: 'main', url: 'https://github.com/adeshbagale/webapp-edureka.git'
             }
         }  
-        stage (''build') {
-        steps {
-        sh '''
-        echo "this is build stage"
-        '''
+         stage("Maven Build"){
+            steps{
+                sh "mvn clean package"
+            }
         }
-      }   
+        
       }  
 }
